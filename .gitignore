@@ -1,0 +1,11 @@
+# Compilation
+bin/
+obj/
+
+# Packages NuGet (se restaurent automatiquement)
+packages/
+
+# Fichiers Visual Studio
+*.user
+*.suo
+.vs/
