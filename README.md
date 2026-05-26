@@ -17,18 +17,19 @@ https://github.com/rafale60700/RP2_VisualStudio
 
 
 1. Installation et lancement de l'application
-GSB-Admin est une application Windows Forms (client lourd) developpee en VB.NET. Elle fonctionne en local avec WAMP.
+GSB-Admin est une application Windows Forms (client lourd) developpee en VB.NET. Elle fonctionne en local.
 
 1.1 Prerequis
-WAMP Server installe et lance (icone verte dans la barre des taches)
+Un serveur local installé et lancé (icone verte dans la barre des taches)
 Visual Studio 2022 avec .NET Framework 4.8
 Package NuGet MySql.Data 9.6.0 (deja inclus dans le projet)
 
 1.2 Mise en place de la base de donnees
-1. Lancer WAMP et ouvrir phpMyAdmin : http://localhost/phpmyadmin
-2. Creer une base de donnees nommee gsb_frais
-3. Importer le fichier gsb_frais2.sql (disponible dans le depot GitHub : /sql/)
-4. Verifier que les tables et les 3 triggers sont bien presents
+1. Lancer le serveur local et ouvrir phpMyAdmin : http://localhost/phpmyadmin
+2. Creer une base de donnees nommee gsb_frais2
+3. Importer le fichier gsb_frais2.sql (disponible dans le depot GitHub)
+4. Importer le fichier Create_user (disponible dans le depot GitHub)
+5. Verifier que les tables et les 3 triggers sont bien presents
 
 1.3 Configuration gsb.ini
 Le fichier gsb.ini se trouve dans le dossier GSB-Admin/bin/Debug/ et contient les parametres de connexion. Son contenu doit etre :
@@ -36,8 +37,8 @@ Le fichier gsb.ini se trouve dans le dossier GSB-Admin/bin/Debug/ et contient le
 [database]
 server   = localhost
 port     = 3306
-name     = gsb_frais
-user     = gsb_user
+name     = gsb_frais2
+user     = gsb_user2
 password = 12-Soleil&
 
 [superadmin]
@@ -49,7 +50,7 @@ password = 0329cc7a8f0c75d022436a7727427279066225c4ae528579c512bbd217fed930
 5. Ouvrir GSB-Admin.sln dans Visual Studio 2022
 6. Clic droit sur le projet > Rebuild Solution
 7. Lancer avec F5 ou double-cliquer sur bin/Debug/GSB-Admin.exe
-8. A l ecran de connexion, saisir le mot de passe : 12-Soleil&
+8. A l'ecran de connexion, saisir le mot de passe : "12-Soleil&"
 
 
 2. Utilisation de l'application
@@ -175,53 +176,4 @@ doc/
 Captures d ecran des formulaires
 
 
-5. Recapitulatif — Points cles de la RP2
-
-Exigence RP2
-Statut
-Localisation
-Application Windows Forms VB.NET
-
-GSB-Admin.sln
-Authentification SHA-256 (mot de passe unique)
-
-ModConfig.vb / gsb.ini
-Lister les utilisateurs (visiteurs + comptables)
-
-FrmListeUtilisateurs.vb
-Creer un utilisateur (visiteur ou comptable)
-
-FrmCreerUtilisateur.vb
-Reinitialiser un mot de passe
-
-FrmReinitialisationMDP.vb
-Classe Utilisateur (attributs communs)
-
-Utilisateur.vb
-Classe Visiteur herite de Utilisateur
-
-Utilisateur.vb
-Classe Comptable herite de Utilisateur
-
-Utilisateur.vb
-Classe GestionnaireUtilisateurs (collection)
-
-GestionnaireUtilisateurs.vb
-Trigger after_insert_lfhf
-
-gsb_frais2.sql
-Trigger after_update_lfhf
-
-gsb_frais2.sql
-Trigger after_delete_lfhf
-
-gsb_frais2.sql
-Chiffrement AES du mot de passe BDD dans gsb.ini
-
-ModConfig.vb
-Requetes preparees (protection injection SQL)
-
-Tous les formulaires
-
-
-  L ensemble des exigences de la fiche RP2 sont satisfaites. L application est fonctionnelle en local.
+  L'ensemble des exigences de la fiche RP2 sont satisfaites. L application est fonctionnelle en local.
