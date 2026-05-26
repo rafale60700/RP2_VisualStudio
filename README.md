@@ -32,7 +32,7 @@ Package NuGet MySql.Data 9.6.0 (deja inclus dans le projet)
 5. Verifier que les tables et les 3 triggers sont bien presents
 
 1.3 Configuration gsb.ini
-Le fichier gsb.ini se trouve dans le dossier GSB-Admin/bin/Debug/ et contient les parametres de connexion. Son contenu doit etre :
+Le fichier gsb.ini se trouve dans le dossier GSB-Admin\GSB-Admin\bin\Debug\   "gsb.ini"   et contient les parametres de connexion. Son contenu doit etre :
 
 [database]
 server   = localhost
@@ -44,7 +44,7 @@ password = 12-Soleil&
 [superadmin]
 password = 0329cc7a8f0c75d022436a7727427279066225c4ae528579c512bbd217fed930
 
-⚠️  Le mot de passe est stocke en hash SHA-256. Ne jamais mettre ce fichier sur GitHub avec le mot de passe en clair.
+  Le mot de passe est stocke en hash SHA-256. Ne jamais mettre ce fichier sur GitHub avec le mot de passe en clair.
 
 1.4 Lancement
 5. Ouvrir GSB-Admin.sln dans Visual Studio 2022
